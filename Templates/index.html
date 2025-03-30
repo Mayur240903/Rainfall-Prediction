@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Rainfall Prediction</h2>
+        <form action="/predict" method="post">
+            <label>Pressure:</label>
+            <input type="text" name="pressure" required><br>
+            
+            <label>Dewpoint:</label>
+            <input type="text" name="dewpoint" required><br>
+            
+            <label>Humidity:</label>
+            <input type="text" name="humidity" required><br>
+            
+            <label>Cloud:</label>
+            <input type="text" name="cloud" required><br>
+            
+            <label>Sunshine:</label>
+            <input type="text" name="sunshine" required><br>
+            
+            <label>Windspeed:</label>
+            <input type="text" name="windspeed" required><br>
+            
+            <label>Wind Direction:</label>
+            <input type="text" name="winddirection" required><br>
+            
+            <button type="submit">Predict</button>
+        </form>
+        
+        {% if prediction %}
+            <h3>Prediction: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
